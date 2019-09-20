@@ -17,7 +17,7 @@ export class NavMenu extends Component {
 
   toggleNavbar () {
     this.setState({
-      collapsed: !this.state.collapsed
+      collapsed: !(this.state as any).collapsed
     });
   }
 
@@ -28,7 +28,7 @@ export class NavMenu extends Component {
           <Container>
             <NavbarBrand tag={Link} to="/">reactexample</NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!(this.state as any).collapsed} navbar>
               <ul className="navbar-nav flex-grow">
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
